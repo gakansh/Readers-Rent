@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
 import AddList from './components/AddList';
+import newPage from './places/pages/newPage';
 import ListHandler from './components/ListHandler';
-
-
+import { BrowserRouter as Router , Switch , Route ,Redirect} from 'react-router-dom';
 
 const App = () => {
 
@@ -18,39 +18,24 @@ const App = () => {
 
 
   return (
+    
+    <Router>
+      <Switch>
+      <Route path="/" exact>
+        <div>
+          <center><h1><b>Welcome to Reader's Rent</b></h1></center>
+          <ListHandler ob1={List} />
+          <AddList nh={f1} />
+        </div>
+      </Route>
 
-    <div>
-      <center><h1><b>Welcome to Reader's Rent</b></h1></center>
-      <ListHandler ob1 = {List}/>
-      <AddList nh={f1}/>
+      <Route path="/new" exact>
+      < newPage />
+      </Route>
+      <Redirect to="/"  />
+      </Switch>
 
-
-    </div>
-
-
-
-
-
-
-
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-
-
+    </Router>
 
   );
 };
