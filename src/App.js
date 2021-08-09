@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState } from 'react';
 import AddList from './components/AddList';
-import newPage from './places/pages/newPage';
+import Users from './places/pages/newPage';
 import ListHandler from './components/ListHandler';
 import { BrowserRouter as Router , Switch , Route ,Redirect} from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const App = () => {
       </Route>
 
       <Route path="/new" exact>
-      < newPage />
+      < Users />
       </Route>
       <Redirect to="/"  />
       </Switch>

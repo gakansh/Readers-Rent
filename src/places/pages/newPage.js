@@ -1,7 +1,7 @@
 import React from 'react';
-
+import Users from '../../user/pages/Users';
 const newPage = () => {
-    return (<h1>newPage Works! Yay</h1>);
+    return (<Users/>);
 };
 
 export default newPage;
